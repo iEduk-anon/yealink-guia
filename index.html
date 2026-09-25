@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guía rápida · Sala Yealink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#10161d;
+    --surface:#1a232c;
+    --surface-2:#212d38;
+    --text:#eef3f5;
+    --muted:#93a5b0;
+    --accent:#ffb100;
+    --green:#3ecf8e;
+    --yellow:#ffc857;
+    --red:#ff5a5f;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:620px; margin:0 auto; padding:28px 20px 48px;}
+
+  header{margin-bottom:28px;}
+  .tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:.02em;
+    color:var(--accent);
+    background:rgba(255,177,0,.1);
+    border:1px solid rgba(255,177,0,.35);
+    padding:3px 9px;
+    border-radius:5px;
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:clamp(26px,7vw,34px);
+    line-height:1.15;
+    margin:0 0 8px;
+    font-weight:700;
+    max-width:16ch;
+  }
+  header p{
+    color:var(--muted);
+    margin:0;
+    font-size:15px;
+    max-width:44ch;
+  }
+
+  .legend{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin:22px 0 30px;
+    padding:14px 16px;
+    background:var(--surface);
+    border-radius:12px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .legend span{display:flex; align-items:center; gap:6px; white-space:nowrap;}
+  .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+
+  details{
+    background:var(--surface);
+    border-radius:14px;
+    margin-bottom:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.05);
+  }
+  summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  .icon{
+    font-size:24px;
+    width:40px;
+    height:40px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--surface-2);
+    border-radius:10px;
+  }
+  .s-title{flex:1; min-width:0;}
+  .s-title strong{display:block; font-size:16px; font-weight:500;}
+  .chev{
+    color:var(--muted);
+    transition:transform .18s ease;
+    flex-shrink:0;
+  }
+  details[open] .chev{transform:rotate(90deg);}
+
+  .body{
+    padding:0 18px 20px 74px;
+    color:var(--muted);
+    font-size:14.5px;
+  }
+  .body h4{
+    color:var(--text);
+    font-size:13px;
+    font-weight:500;
+    margin:14px 0 6px;
+    text-transform:none;
+  }
+  .body ol, .body ul{margin:0; padding-left:18px;}
+  .body li{margin-bottom:6px;}
+  .body li:last-child{margin-bottom:0;}
+
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-top:14px;
+  }
+  .badge.green{background:rgba(62,207,142,.12); color:var(--green);}
+  .badge.yellow{background:rgba(255,200,87,.12); color:var(--yellow);}
+  .badge.red{background:rgba(255,90,95,.12); color:var(--red);}
+
+  footer{
+    margin-top:34px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.08);
+    font-size:13.5px;
+    color:var(--muted);
+  }
+  footer a{color:var(--accent); text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  @media (prefers-reduced-motion:reduce){ .chev{transition:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="tag">SALA DE VIDEOCONFERENCIA · YEALINK</span>
+    <h1>¿Algo falló en la sala?</h1>
+    <p>Toca el problema que estás viendo y sigue los pasos. La mayoría se arregla en menos de 2 minutos.</p>
+  </header>
+
+  <div class="legend">
+    <span><span class="dot" style="background:var(--green)"></span>Lo arreglas tú</span>
+    <span><span class="dot" style="background:var(--yellow)"></span>Reinicio simple</span>
+    <span><span class="dot" style="background:var(--red)"></span>Llamar a TI</span>
+  </div>
+
+  <details>
+    <summary>
+      <span class="icon">📅</span>
+      <span class="s-title"><strong>No aparece la reunión</strong></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="body">
+      <h4>Antes de reiniciar nada</h4>
+      <ol>
+        <li>Revisa que la reunión haya sido agendada invitando directamente a la sala (no solo escribiendo el nombre de la sala en el texto de la invitación).</li>
+        <li>En el panel táctil, desliza hacia abajo para refrescar el calendario.</li>
+      </ol>
+      <h4>Si sigue sin aparecer</h4>
+      <ol>
+        <li>En el panel: Configuración → Reiniciar dispositivo.</li>
+        <li>Espera 1 minuto y revisa de nuevo el calendario.</li>
+      </ol>
+      <span class="badge yellow">🟡 2 min · si no aparece tras reiniciar, pasa a rojo</span>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="icon">🔇</span>
+      <span class="s-title"><strong>No hay audio</strong></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="body">
+      <ol>
+        <li>Revisa el volumen en el panel táctil (ícono de altavoz, esquina superior).</li>
+        <li>Confirma que el cable de la barra Yealink A40 esté bien conectado.</li>
+        <li>Panel → Configuración → Audio → verifica que el dispositivo de salida sea la barra A40.</li>
+        <li>Si nada de esto funciona, reinicia la barra desde el panel.</li>
+      </ol>
+      <span class="badge green">🟢 chequeo rápido</span>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="icon">🎤</span>
+      <span class="s-title"><strong>No te escuchan</strong></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="body">
+      <ol>
+        <li>Verifica que el mute no esté activo (luz roja en el panel o el control).</li>
+        <li>Revisa que nada esté cubriendo el micrófono de la barra A40.</li>
+        <li>Panel → Configuración → Audio → Micrófono → confirma que esté seleccionado el dispositivo correcto.</li>
+      </ol>
+      <span class="badge green">🟢 chequeo rápido</span>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="icon">📤</span>
+      <span class="s-title"><strong>No puedo compartir pantalla</strong></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="body">
+      <ol>
+        <li>Revisa que el dongle WPP30 esté conectado al puerto USB de la sala.</li>
+        <li>Mira la luz del WPP30: fija = emparejado, parpadeando = todavía conectando.</li>
+        <li>Sácalo, espera 10 segundos y vuelve a conectarlo.</li>
+        <li>Confirma que tu laptop esté usando ese puerto USB, no otro.</li>
+      </ol>
+      <span class="badge green">🟢 chequeo rápido</span>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="icon">📺</span>
+      <span class="s-title"><strong>La TV dice "Sin señal"</strong></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="body">
+      <ol>
+        <li>Revisa que el cable HDMI entre la barra A40 y la TV esté bien conectado en ambos extremos.</li>
+        <li>Con el control de la TV, confirma que esté en la entrada HDMI correcta.</li>
+        <li>Revisa que la barra A40 esté encendida (luz frontal activa).</li>
+      </ol>
+      <span class="badge yellow">🟡 si el cable está dañado, pasa a rojo</span>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="icon">⬛</span>
+      <span class="s-title"><strong>El panel no muestra nada</strong></span>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="body">
+      <ol>
+        <li>Toca la pantalla del panel (CTP18): puede estar solo en reposo.</li>
+        <li>Revisa que el cable que conecta el panel a la barra A40 esté bien puesto.</li>
+        <li>Desconecta y reconecta la alimentación del panel, espera 30 segundos.</li>
+      </ol>
+      <span class="badge red">🔴 si sigue en negro, es tema de TI</span>
+    </div>
+  </details>
+
+  <footer>
+    ¿Ninguno de estos pasos funcionó? Genera un ticket en la intranet o escribe a
+    <a href="mailto:helpdesk.chile@cognita.com">helpdesk.chile@cognita.com</a>.
+  </footer>
+
+</div>
+</body>
+</html>
