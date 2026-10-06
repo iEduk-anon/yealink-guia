@@ -59,13 +59,13 @@ footer a{color:var(--blue);font-weight:600}
 </main>
 <script>
 const P=[
-{t:"📅 No aparece la reunión",s:["warn","2 min · si no aparece tras reiniciar, pasa a rojo"],h:`
-<h2>Antes de reiniciar nada</h2><ol><li>Revisa que la reunión haya sido agendada invitando directamente a la sala (no solo escribiendo el nombre de la sala en el texto de la invitación).</li><li>En el panel táctil, desliza hacia abajo para refrescar el calendario.</li></ol>
+{t:"📅 No aparece la reunión",s:["warn","Si al reiniciar, sigue sin aparecer, pasa a rojo"],h:`
+<h2>Antes de reiniciar</h2><ol><li>Revisa que la reunión haya sido agendada invitando directamente a la sala (no solo escribiendo el nombre de la sala en el texto de la invitación).</li><li>En el panel táctil, desliza hacia abajo para refrescar el calendario.</li></ol>
 <h2>Si sigue sin aparecer</h2><ol><li>En el panel: Configuración → Reiniciar dispositivo.</li><li>Espera 1 minuto y revisa de nuevo el calendario.</li></ol>`},
 {t:"🔇 No hay audio",s:["ok","chequeo rápido"],h:`<ol><li>Revisa el volumen en el panel táctil (ícono de altavoz, esquina superior).</li><li>Confirma que el cable de la barra Yealink A40 esté bien conectado.</li><li>Panel → Configuración → Audio → verifica que el dispositivo de salida sea la barra A40.</li><li>Si nada de esto funciona, reinicia la barra desde el panel.</li></ol>`},
 {t:"🎤 No te escuchan",s:["ok","chequeo rápido"],h:`<ol><li>Verifica que el mute no esté activo (luz roja en el panel o el control).</li><li>Revisa que nada esté cubriendo el micrófono de la barra A40.</li><li>Panel → Configuración → Audio → Micrófono → confirma que esté seleccionado el dispositivo correcto.</li></ol>`},
 {t:"📤 No puedo compartir pantalla",s:["ok","chequeo rápido"],h:`<ol><li>Revisa que el dongle WPP30 esté conectado al puerto USB de la sala.</li><li>Mira la luz del WPP30: fija = emparejado, parpadeando = todavía conectando.</li><li>Sácalo, espera 10 segundos y vuelve a conectarlo.</li><li>Confirma que tu laptop esté usando ese puerto USB, no otro.</li></ol>`},
-{t:"📺 La TV dice «Sin señal»",s:["warn","si el cable está dañado, pasa a rojo"],h:`<ol><li>Revisa que el cable HDMI entre la barra A40 y la TV esté bien conectado en ambos extremos.</li><li>Con el control de la TV, confirma que esté en la entrada HDMI correcta.</li><li>Revisa que la barra A40 esté encendida (luz frontal activa).</li></ol>`},
+{t:"📺 La TV dice «Sin señal»",s:["warn","si el cable se ve dañado, pasa a rojo"],h:`<ol><li>Revisa que el cable HDMI entre la barra A40 y la TV esté bien conectado en ambos extremos.</li><li>Con el control de la TV, confirma que esté en la entrada HDMI correcta.</li><li>Revisa que la barra A40 esté encendida (luz frontal activa).</li></ol>`},
 {t:"⬛ El panel no muestra nada",s:["bad","si sigue en negro, es tema de TI"],h:`<ol><li>Toca la pantalla del panel (CTP18): puede estar solo en reposo.</li><li>Revisa que el cable que conecta el panel a la barra A40 esté bien puesto.</li><li>Desconecta y reconecta la alimentación del panel, espera 30 segundos.</li></ol>`},
 {t:"🔢 Las pantallas muestran un código",s:["warn","solución pendiente de trabajo"],h:`<p>Este es un problema conocido que está siendo trabajado por TI. La solución todavía está pendiente: por ahora, avísanos apenas te aparezca así podemos reactivar el equipo.</p>`}
 ];
