@@ -41,6 +41,11 @@ summary:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offs
 .body p{margin:14px 0 12px}
 .foto{display:block;max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);margin:12px 0}
 .body .tag{margin-top:2px}
+.body ul{margin:8px 0 12px;padding-left:22px}
+.equipos{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin:12px 0}
+.equipos figure{margin:0;text-align:center}
+.equipos img{display:block;width:100%;height:110px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px}
+.equipos figcaption{font-size:.9rem;font-weight:600;margin-top:6px}
 footer{margin-top:28px;padding:16px;background:var(--blue-soft);border-radius:10px}
 footer a{color:var(--blue);font-weight:600}
 @media (prefers-reduced-motion:reduce){summary::after{transition:none}}
@@ -62,6 +67,7 @@ footer a{color:var(--blue);font-weight:600}
 </main>
 <script>
 const P=[
+{t:"❓ ¿No recuerdas cómo usar la sala de reuniones?",h:`<p>Recuerda que la sala cuenta con los siguientes dispositivos:</p><div class="equipos"><figure><img src="img/presentador.png" alt="Presentador inalámbrico" loading="lazy"><figcaption>1. Presentador inalámbrico</figcaption></figure><figure><img src="img/barra.png" alt="Barra de videoconferencia" loading="lazy"><figcaption>2. Barra de videoconferencia</figcaption></figure><figure><img src="img/panel.png" alt="Panel táctil" loading="lazy"><figcaption>3. Panel táctil</figcaption></figure><figure><img src="img/tv.png" alt="TV" loading="lazy"><figcaption>4. TV</figcaption></figure><figure><img src="img/control-tv.png" alt="Control de la TV" loading="lazy"><figcaption>5. Control de la TV</figcaption></figure></div><h2>Para hacer uso de la sala de reuniones recuerda que:</h2><ul><li>Puedes invitar a la sala desde Teams, invitando a <b>ch2meetingroom1@cognita.com</b>.</li><li>También puedes crear una reunión desde el panel táctil, invitando a los asistentes que estarán en la reunión.</li></ul>`},
 {t:"📅 No aparece la reunión",i:"no-reunion",s:["warn","Nivel medio, si no aparece aún, contacta a TI"],h:`
 <h2>Antes de reiniciar</h2><ol><li>Revisa que la reunión haya sido agendada invitando directamente a la sala <b>ch2meetingroom1@cognita.com</b>.</li><li>En el panel táctil, en el costado derecho donde se visualiza el calendario, desliza hacia abajo para refrescar el calendario.</li></ol>
 <h2>Si sigue sin aparecer</h2><ol><li>Ubica el cable que conecta al panel, desconecta y vuelve a conectarlo.</li><li>Espera 1 minuto y revisa de nuevo el calendario.</li></ol>`},
@@ -70,9 +76,9 @@ const P=[
 {t:"📤 No puedo compartir pantalla",i:"compartir-pantalla",s:["ok","Nivel sencillo"],h:`<ol><li>Revisa que el dongle (Presentador inalámbrico) esté conectado al puerto USB de la sala.</li><li>Mira la luz del Presentador inalámbrico: fija = emparejado, parpadeando = todavía conectando.</li><li>Sácalo, espera 10 segundos y vuelve a conectarlo.</li><li>Confirma que tu computador esté usando ese puerto USB, no otro.</li></ol>`},
 {t:"📺 La TV dice ''Sin señal o Hdmi desconectado'' ",i:"tv-sin-senal",s:["warn","Si el cable u otro accesorio se ve dañado, contactar a TI"],h:`<ol><li>Revisa que el cable HDMI entre la barra y la TV esté bien conectado en ambos extremos.</li><li>Con el control de la TV, confirma que esté en la entrada HDMI correcta.</li><li>Revisa que la barra esté encendida (luz frontal activa).</li></ol>`},
 {t:"⬛ El panel no muestra nada",i:"panel-negro",s:["bad","Si luego de haber hecho las validaciones, sigue sin dar imagen, contactar a TI"],h:`<ol><li>Toca la pantalla del panel táctil: puede estar solo en reposo.</li><li>Revisa que el cable que conecta el panel a la barra esté bien puesto.</li><li>Desconecta y reconecta la alimentación del panel, espera 30 segundos.</li></ol>`},
-{t:"🔢 Las pantallas muestran un código",i:"codigo-pantalla",s:["warn","Si sigue sin funcionar o se bloquea la cuenta, contactar a TI"],h:`<ol><li>En tu computador o teléfono, entra a <a href="https://login.microsoft.com/device" target="_blank" rel="noopener">login.microsoft.com/device</a>.</li><li>Escribe el código que se muestra en la pantalla afectada.</li><li>Cuando pida iniciar sesión, usa esta cuenta:<br>Usuario: <b>ch2meetingroom1@cognita.com</b><br>Contraseña: <b>Pedir ayuda a TI</b></li></li><li>Escribe usuario y contraseña con cuidado: si te equivocas varias veces, la cuenta se puede bloquear.</li><li>Espera unos segundos: la TV o el panel afectado debería iniciar sesión solo.</li><li>Si ambas pantallas muestran código, repite el proceso con la pantalla que falta.</li></ol>`}
+{t:"🔢 Las pantallas muestran un código",i:"codigo-pantalla",s:["warn","Si sigue sin funcionar o se bloquea la cuenta, contactar a TI"],h:`<ol><li>En tu computador o teléfono, entra a <a href="https://login.microsoft.com/device" target="_blank" rel="noopener">login.microsoft.com/device</a>.</li><li>Escribe el código que se muestra en la pantalla afectada.</li><li>Cuando pida iniciar sesión, usa esta cuenta:<br>Usuario: <b>ch2meetingroom1@cognita.com</b><br>Contraseña: <b>Pedir ayuda a TI</b></li><li>Escribe usuario y contraseña con cuidado: si te equivocas varias veces, la cuenta se puede bloquear.</li><li>Espera unos segundos: la TV o el panel afectado debería iniciar sesión solo.</li><li>Si ambas pantallas muestran código, repite el proceso con la pantalla que falta.</li></ol>`}
 ];
-document.getElementById("lista").innerHTML=P.map(p=>`<details><summary>${p.t}</summary><div class="body">${p.h}<img class="foto" src="img/${p.i}.png" alt="${p.t.replace(/^\S+\s/,'')}" loading="lazy" onerror="this.remove()"><span class="tag ${p.s[0]}">${p.s[1]}</span></div></details>`).join("");
+document.getElementById("lista").innerHTML=P.map(p=>`<details><summary>${p.t}</summary><div class="body">${p.h}${p.i?`<img class="foto" src="img/${p.i}.png" alt="${p.t.replace(/^\S+\s/,'')}" loading="lazy" onerror="this.remove()">`:''}${p.s?`<span class="tag ${p.s[0]}">${p.s[1]}</span>`:''}</div></details>`).join("");
 </script>
 </body>
 </html>
